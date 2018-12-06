@@ -29,4 +29,11 @@ describe "Partida de Black Jack" do
 		expect(jugador.puntaje).to eq 13
 	end
 
+	it "Puntaje mayor a 21" do
+		jugador = Jugador.new
+		jugador.proximaCarta 22
+		jugador.pedirCarta
+		expect(jugador.resultado).to eq "PERDISTE"
+	end
+
 end

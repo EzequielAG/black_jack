@@ -19,4 +19,10 @@ class Jugador
 		@carta1 = valor
 	end
 
+	def resultado
+		if @puntaje > 21
+			return "PERDISTE"
+		end
+	end
+
 end
