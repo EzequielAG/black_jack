@@ -15,6 +15,5 @@ get '/pedir' do
 end
 
 get '/plantarse' do
-	"Resultado: #{@@jugador.resultado}"
+	erb :resultado
 end
-

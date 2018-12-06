@@ -14,3 +14,8 @@ Given abro el juego
 When me planto
 Then debo ver "Resultado: "
 
+Scenario: Vuelvo a Jugar
+Given abro el juego
+When me planto
+And elijo volver a jugar
+Then debo ver "Black Jack"

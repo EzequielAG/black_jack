@@ -13,3 +13,7 @@ end
 Given(/^me planto$/) do
   click_link("Plantarse")
 end
+
+Given(/^elijo volver a jugar$/) do
+  click_link("Volver a Jugar")
+end
