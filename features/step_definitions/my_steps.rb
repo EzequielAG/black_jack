@@ -9,3 +9,7 @@ end
 Given(/^pido carta$/) do
   click_link("Pedir")
 end
+
+Given(/^me planto$/) do
+  click_link("Plantarse")
+end
