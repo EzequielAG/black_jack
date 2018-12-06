@@ -8,3 +8,7 @@ get '/pedir' do
 	"#carta"
 end
 
+get '/plantarse' do
+	"#plantado"
+end
+
