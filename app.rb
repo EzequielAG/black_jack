@@ -5,16 +5,16 @@ require "./lib/banca.rb"
 
 get '/' do
 	@@jugador = Jugador.new
-    erb :inicio
+	erb :inicio
 end
 
 get '/pedir' do
 	@proximaCarta = @@jugador.proximaCarta 5
-	@carta = @@jugador.pedirCarta
-	"Carta: #{@carta}"
+	@carta = "Carta: #{@@jugador.pedirCarta}"
+	erb :inicio
 end
 
 get '/plantarse' do
-	"#plantado"
+	"Total: #{@@jugador.resultado}"
 end
 

@@ -7,7 +7,7 @@ Then debo ver "Black Jack"
 Scenario: Pedir Carta
 Given abro el juego
 When pido carta
-Then debo ver "Carta: 5"
+Then debo ver "Carta: "
 
 Scenario: Plantarse
 Given abro el juego
