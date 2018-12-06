@@ -4,8 +4,12 @@ class Banca
 		@puntaje = 0
 	end
 
-	def puntaje
-		return @puntaje
+	def puntaje valor=nil
+		if valor
+			return valor
+		else
+			return @puntaje
+		end
 	end
 
 end

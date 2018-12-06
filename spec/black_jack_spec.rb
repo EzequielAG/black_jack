@@ -1,5 +1,6 @@
 require "./lib/jugador.rb"
 require "./lib/banca.rb"
+require "./lib/partida.rb"
 
 describe "Partida de Black Jack" do
 
@@ -30,10 +31,11 @@ describe "Partida de Black Jack" do
 	end
 
 	it "Puntaje mayor a 21" do
-		jugador = Jugador.new
+		partida = Partida.new
+		jugador = partida.jugador
 		jugador.proximaCarta 22
 		jugador.pedirCarta
-		expect(jugador.resultado).to eq "PERDISTE"
+		expect(partida.resultado).to eq "PERDISTE"
 	end
 
 end

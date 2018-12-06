@@ -1,10 +1,13 @@
 require 'sinatra'
+require "./lib/partida.rb"
 require "./lib/jugador.rb"
 require "./lib/banca.rb"
 
 
 get '/' do
-	@@jugador = Jugador.new
+	@@partida = Partida.new	
+	@@jugador = @@partida.jugador
+	
 	erb :inicio
 end
 
