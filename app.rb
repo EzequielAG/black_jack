@@ -15,6 +15,6 @@ get '/pedir' do
 end
 
 get '/plantarse' do
-	"Total: #{@@jugador.resultado}"
+	"Resultado: #{@@jugador.resultado}"
 end
 

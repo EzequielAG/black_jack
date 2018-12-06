@@ -12,5 +12,5 @@ Then debo ver "Carta: "
 Scenario: Plantarse
 Given abro el juego
 When me planto
-Then debo ver "#plantado"
+Then debo ver "Resultado: "
 
