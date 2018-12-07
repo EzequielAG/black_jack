@@ -25,15 +25,16 @@ class Partida
 		if @carta_forzada > 0
 			@carta = @carta_forzada
 			@carta_forzada = 0
+			@valor = @carta
 		else
 			c = @mazo.pop
 			@palo = (c/13).floor
 			@valor = c - (@palo * 13)
-			if @valor > 10
-				@carta = 10
-			else
-				@carta = @valor
-			end
+		end
+		if @valor > 10
+			@carta = 10
+		else
+			@carta = @valor
 		end
 		return @carta
 
