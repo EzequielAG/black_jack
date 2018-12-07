@@ -1,3 +1,5 @@
+require "./lib/deck.rb"
+
 class Partida
 
 	def initialize
@@ -9,6 +11,7 @@ class Partida
 		@carta_forzada_banca = 0
 		@puntaje_jugador = 0
 		@puntaje_banca = 0
+		@ultima_carta = 0
 	end
 
 
@@ -24,12 +27,18 @@ class Partida
 	def sacarCarta
 		if @carta_forzada > 0
 			@carta = @carta_forzada
+			@ultima_carta = @carta
 			@carta_forzada = 0
 			@valor = @carta
 		else
-			c = @mazo.pop
-			@palo = (c/13).floor
-			@valor = c - (@palo * 13)
+			@c = @mazo.pop
+			@ultima_carta = @c
+			@palo = (@c/13).floor
+			@valor = @c - (@palo * 13)
+			if @valor == 0
+				@valor = 13
+				@palo -= 1
+			end
 		end
 		if @valor > 10
 			@carta = 10
@@ -40,6 +49,9 @@ class Partida
 
 	end
 
+	def ultima_carta
+		return @ultima_carta
+	end
 
 	def pedirCarta
 		@carta = sacarCarta
