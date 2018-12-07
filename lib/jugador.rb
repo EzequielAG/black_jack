@@ -2,7 +2,8 @@ class Jugador
 
 	def initialize
 		@puntaje = 0
-		@carta1 = 0
+		@carta = 0
+		@carta_forzada = 0
 	end
 
 	def puntaje
@@ -10,22 +11,22 @@ class Jugador
 	end
 
 	def pedirCarta
-		if @carta1 > 0
-			@puntaje += @carta1
-			if @puntaje > 21
-				return -1
-			else
-				return @carta1
-			end
+		if @carta_forzada > 0
+			@carta = @carta_forzada
+			@carta_forzada = 0
+		else
+			@carta = Random.new.rand(1..10)
+		end
+		@puntaje += @carta
+		if @puntaje > 21
+			return -1
+		else
+			return @carta
 		end
 	end
 
-	def proximaCarta valor=nil
-		if valor
-			@carta1 = valor
-		else
-			@carta1 = Random.new.rand(1..10)
-		end
+	def proximaCarta valor
+		@carta_forzada = valor
 	end
 
 end

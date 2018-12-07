@@ -12,7 +12,6 @@ get '/' do
 end
 
 get '/pedir' do
-	@proximaCarta = @@jugador.proximaCarta
 	@carta = @@jugador.pedirCarta
 	if (@carta < 0)
 		redirect '/plantarse'
