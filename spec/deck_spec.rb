@@ -29,10 +29,17 @@ describe "Poker Deck" do
 		expect( card_image(10) ).to eq "0H"
 	end
 
-	it "reina de corazones" do
+	it "Q de corazones" do
 		expect( card_image(12) ).to eq "QH"
 	end
 
+	it "J de corazones" do
+		expect( card_image(11) ).to eq "JH"
+	end
+
+	it "K de trebol" do
+		expect( card_image(26) ).to eq "KC"
+	end
 
 end
 
