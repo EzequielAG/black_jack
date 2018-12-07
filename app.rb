@@ -14,11 +14,12 @@ end
 get '/pedir' do
 	@carta = @@jugador.pedirCarta
 	if (@carta < 0)
-		redirect '/plantarse'
+		erb :resultado
+	else
+		@carta = "Carta: #{@carta}"
+		@suma = "Suma: #{@@jugador.puntaje}"
+		erb :inicio
 	end
-	@carta = "Carta: #{@carta}"
-	@suma = "Suma: #{@@jugador.puntaje}"
-	erb :inicio
 end
 
 get '/plantarse' do
