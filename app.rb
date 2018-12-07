@@ -14,6 +14,7 @@ end
 get '/pedir' do
 	@proximaCarta = @@jugador.proximaCarta 5
 	@carta = "Carta: #{@@jugador.pedirCarta}"
+	@suma = "Suma: #{@@jugador.puntaje}"
 	erb :inicio
 end
 
