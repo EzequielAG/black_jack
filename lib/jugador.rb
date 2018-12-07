@@ -19,7 +19,6 @@ class Jugador
 			@carta_forzada = 0
 		else
 			c = @cartas.pop
-			puts "Carta: #{c}"
 			@mazo = (c/13).floor
 			@valor = c - (@mazo * 13)
 			if @valor > 10

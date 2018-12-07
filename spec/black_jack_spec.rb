@@ -16,6 +16,12 @@ describe "Partida de Black Jack" do
 		expect(jugador.puntaje).to eq 5
 	end
 
+	it "recibir una carta al azar" do
+		jugador = Jugador.new
+		jugador.pedirCarta
+		expect(jugador.puntaje).to be > 0
+	end
+
 	it "pedir otra carta" do
 		jugador = Jugador.new
 		jugador.proximaCarta 5

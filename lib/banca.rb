@@ -4,11 +4,13 @@ class Banca
 		@puntaje = Random.new.rand(13..21)
 	end
 
-	def puntaje valor=nil
+	def puntaje
+		return @puntaje
+	end
+
+	def forzar_puntaje valor=nil
 		if valor
-			return valor
-		else
-			return @puntaje
+			@puntaje = valor
 		end
 	end
 
