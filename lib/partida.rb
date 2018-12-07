@@ -12,6 +12,10 @@ class Partida
 		return @jugador
 	end
 
+	def banca
+		return @banca
+	end
+
 	def resultado
 		if @jugador.puntaje > 21
 			return "PERDISTE"

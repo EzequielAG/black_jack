@@ -6,6 +6,7 @@ class Jugador
 		@carta_forzada = 0
 		@valor = 0
 		@mazo = 0
+		@cartas = [*1..52].shuffle
 	end
 
 	def puntaje
@@ -17,7 +18,8 @@ class Jugador
 			@carta = @carta_forzada
 			@carta_forzada = 0
 		else
-			c = Random.new.rand(1..52)
+			c = @cartas.pop
+			puts "Carta: #{c}"
 			@mazo = (c/13).floor
 			@valor = c - (@mazo * 13)
 			if @valor > 10
