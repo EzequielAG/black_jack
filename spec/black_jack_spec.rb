@@ -39,4 +39,10 @@ describe "Partida de Black Jack" do
 		expect(partida.resultado).to eq "PERDISTE"
 	end
 
+	it "puntaje forzado de banca" do
+		banca = Banca.new
+		banca.forzar_puntaje 10
+		expect(banca.puntaje).to eq 10
+	end
+
 end
