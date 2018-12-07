@@ -62,7 +62,7 @@ describe "Partida de Black Jack" do
 
 	it "el jugador gana" do
 		partida = Partida.new
-		partida.forzar_puntaje_banca 19
+		partida.forzar_puntaje_banca 9
 		partida.proximaCarta 10
 		partida.pedirCarta
 		partida.proximaCarta 10
