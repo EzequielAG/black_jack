@@ -72,6 +72,14 @@ describe "Partida de Black Jack" do
 		expect(partida.resultado).to eq "GANASTE"
 	end
 
+	it "la banca saca cartas" do
+		partida = Partida.new
+		partida.proximaCarta 10
+		partida.pedirCarta
+		partida.resultado
+		expect(partida.puntaje_banca).to be > 0
+	end
+
 
 	it "figuras suman 10" do
 		partida = Partida.new
