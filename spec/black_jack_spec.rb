@@ -62,11 +62,13 @@ describe "Partida de Black Jack" do
 
 	it "el jugador gana" do
 		partida = Partida.new
+		partida.proximaCarta 10
+		partida.pedirCarta
+		partida.proximaCarta 10
+		partida.pedirCarta
+		partida.proximaCarta 1
+		partida.pedirCarta
 		partida.forzar_puntaje_banca 22
-		partida.proximaCarta 10
-		partida.pedirCarta
-		partida.proximaCarta 10
-		partida.pedirCarta
 		expect(partida.resultado).to eq "GANASTE"
 	end
 

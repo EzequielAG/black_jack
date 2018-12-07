@@ -1,8 +1,11 @@
 def card_image index
 	# Order Hearts, Clubs, Spades, Diamonds
-
 	color = (index/13).floor
 	number = index - (color * 13)
+	if number == 0
+		number = 13
+		color -= 1
+	end
 	figure = %w{H C S D}[color]
 
 	if number == 1
