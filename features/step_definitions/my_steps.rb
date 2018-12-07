@@ -7,7 +7,7 @@ Then(/^debo ver "(.*?)"$/) do |este_texto|
 end
 
 Given(/^pido carta$/) do
-  @@jugador.proximaCarta 5
+  @@partida.proximaCarta 5
   click_link("Pedir")
 end
 
@@ -20,7 +20,7 @@ Given(/^elijo volver a jugar$/) do
 end
 
 When(/^pido carta y me da un (\d+)$/) do |carta|
-  @@jugador.proximaCarta carta.to_i
+  @@partida.proximaCarta carta.to_i
   click_link("Pedir")
 end
 

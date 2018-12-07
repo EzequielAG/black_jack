@@ -1,48 +1,45 @@
-require "./lib/jugador.rb"
-require "./lib/banca.rb"
 require "./lib/partida.rb"
 
 describe "Partida de Black Jack" do
 
 	it "puntaje inicial del jugador en cero" do
-		jugador = Jugador.new
-		expect(jugador.puntaje).to eq 0
+		jugador = Partida.new
+		expect(jugador.puntaje_jugador).to eq 0
 	end
 
 	it "pedir una carta" do
-		jugador = Jugador.new
+		jugador = Partida.new
 		jugador.proximaCarta 5
 		jugador.pedirCarta
-		expect(jugador.puntaje).to eq 5
+		expect(jugador.puntaje_jugador).to eq 5
 	end
 
 	it "recibir una carta al azar" do
-		jugador = Jugador.new
+		jugador = Partida.new
 		jugador.pedirCarta
-		expect(jugador.puntaje).to be > 0
+		expect(jugador.puntaje_jugador).to be > 0
 	end
 
 	it "pedir otra carta" do
-		jugador = Jugador.new
+		jugador = Partida.new
 		jugador.proximaCarta 5
 		jugador.pedirCarta
 		jugador.proximaCarta 8
 		jugador.pedirCarta
-		expect(jugador.puntaje).to eq 13
+		expect(jugador.puntaje_jugador).to eq 13
 	end
 
 	it "Puntaje mayor a 21" do
 		partida = Partida.new
-		jugador = partida.jugador
-		jugador.proximaCarta 22
-		jugador.pedirCarta
+		partida.proximaCarta 22
+		partida.pedirCarta
 		expect(partida.resultado).to eq "PERDISTE"
 	end
 
 	it "puntaje forzado de banca" do
-		banca = Banca.new
-		banca.forzar_puntaje 10
-		expect(banca.puntaje).to eq 10
+		banca = Partida.new
+		banca.forzar_puntaje_banca 10
+		expect(banca.puntaje_banca).to eq 10
 	end
 
 end
