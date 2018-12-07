@@ -72,6 +72,7 @@ class Partida
 
 	def forzar_puntaje_banca valor
 		@carta_forzada_banca = valor
+		@puntaje_banca = @carta_forzada_banca
 	end
 
 	def resultado
