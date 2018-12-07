@@ -9,11 +9,6 @@ describe "Partida de Black Jack" do
 		expect(jugador.puntaje).to eq 0
 	end
 
-	it "puntaje inicial de la banca en cero" do
-		banca = Banca.new
-		expect(banca.puntaje).to eq 0
-	end
-
 	it "pedir una carta" do
 		jugador = Jugador.new
 		jugador.proximaCarta 5
