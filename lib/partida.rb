@@ -6,6 +6,7 @@ class Partida
 		@palo = 0
 		@carta = 0
 		@carta_forzada = 0
+		@carta_forzada_banca = 0
 		@puntaje_jugador = 0
 		@puntaje_banca = 0
 	end
@@ -54,6 +55,9 @@ class Partida
 		while @puntaje_banca < @puntaje_jugador do
 			@carta = sacarCarta
 			@puntaje_banca += @carta
+			if @carta_forzada_banca > 0
+				@puntaje_banca = @carta_forzada_banca
+			end
 		end
 		if @puntaje_banca > 21
 			@puntaje_banca = 0
@@ -65,10 +69,8 @@ class Partida
 		@carta_forzada = valor
 	end
 
-	def forzar_puntaje_banca valor=nil
-		if valor
-			@puntaje_banca = valor
-		end
+	def forzar_puntaje_banca valor
+		@carta_forzada_banca = valor
 	end
 
 	def resultado

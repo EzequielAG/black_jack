@@ -38,3 +38,16 @@ When pido carta y me da un 5
 When pido carta y me da un 10
 Then debo ver "PERDISTE"
 
+Scenario: Pido dos cartas, me da un diez y un nueve y me planto
+Given abro el juego
+When pido carta y me da un 10
+When pido carta y me da un 9
+When me planto
+Then debo ver "Tu puntaje: 19"
+
+Scenario: Pido un 10, me planto y veo que la banca tiene 15
+Given abro el juego
+When pido carta y me da un 10
+And la banca tiene 15
+When me planto
+Then debo ver "Puntaje banca: 15"

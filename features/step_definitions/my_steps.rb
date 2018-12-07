@@ -24,3 +24,7 @@ When(/^pido carta y me da un (\d+)$/) do |carta|
   click_link("Pedir")
 end
 
+When(/^la banca tiene (\d+)$/) do |puntaje|
+  @@partida.forzar_puntaje_banca puntaje.to_i
+end
+
