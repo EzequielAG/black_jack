@@ -4,6 +4,8 @@ class Jugador
 		@puntaje = 0
 		@carta = 0
 		@carta_forzada = 0
+		@valor = 0
+		@mazo = 0
 	end
 
 	def puntaje
@@ -15,7 +17,14 @@ class Jugador
 			@carta = @carta_forzada
 			@carta_forzada = 0
 		else
-			@carta = Random.new.rand(1..10)
+			c = Random.new.rand(1..52)
+			@mazo = (c/13).floor
+			@valor = c - (@mazo * 13)
+			if @valor > 10
+				@carta = 10
+			else
+				@carta = @valor
+			end
 		end
 		@puntaje += @carta
 		if @puntaje > 21
