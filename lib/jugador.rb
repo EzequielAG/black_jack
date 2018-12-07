@@ -20,8 +20,12 @@ class Jugador
 		end
 	end
 
-	def proximaCarta valor
-		@carta1 = valor
+	def proximaCarta valor=nil
+		if valor
+			@carta1 = valor
+		else
+			@carta1 = Random.new.rand(1..10)
+		end
 	end
 
 end

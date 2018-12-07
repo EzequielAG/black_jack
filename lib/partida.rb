@@ -16,7 +16,7 @@ class Partida
 		if @jugador.puntaje > 21
 			return "PERDISTE"
 		else
-			if @jugador.puntaje > @banca.puntaje(19)
+			if @jugador.puntaje > @banca.puntaje
 				return "GANASTE"
 			else
 				return "PERDISTE"

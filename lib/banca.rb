@@ -1,7 +1,7 @@
 class Banca
 
 	def initialize
-		@puntaje = 0
+		@puntaje = Random.new.rand(13..21)
 	end
 
 	def puntaje valor=nil
