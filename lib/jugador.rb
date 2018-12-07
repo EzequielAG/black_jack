@@ -12,7 +12,11 @@ class Jugador
 	def pedirCarta
 		if @carta1 > 0
 			@puntaje += @carta1
-			return @carta1
+			if @puntaje > 21
+				return -1
+			else
+				return @carta1
+			end
 		end
 	end
 
@@ -21,7 +25,6 @@ class Jugador
 	end
 
 	def plantarse
-		@puntjeCasa = 21
 		resultado
 	end
 

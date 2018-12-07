@@ -15,10 +15,12 @@ class Partida
 	def resultado
 		if @jugador.puntaje > 21
 			return "PERDISTE"
-		elsif @jugador.puntaje > @banca.puntaje
-			return "GANASTE"
 		else
-			return "PERDISTE"		
+			if @jugador.puntaje > @banca.puntaje(19)
+				return "GANASTE"
+			else
+				return "PERDISTE"
+			end
 		end
 	end
 

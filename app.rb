@@ -13,7 +13,11 @@ end
 
 get '/pedir' do
 	@proximaCarta = @@jugador.proximaCarta 5
-	@carta = "Carta: #{@@jugador.pedirCarta}"
+	@carta = @@jugador.pedirCarta
+	if (@carta < 0)
+		redirect '/plantarse'
+	end
+	@carta = "Carta: #{@carta}"
 	@suma = "Suma: #{@@jugador.puntaje}"
 	erb :inicio
 end
