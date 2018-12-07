@@ -24,8 +24,4 @@ class Jugador
 		@carta1 = valor
 	end
 
-	def plantarse
-		resultado
-	end
-
 end
