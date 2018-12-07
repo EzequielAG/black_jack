@@ -31,7 +31,11 @@ describe "Partida de Black Jack" do
 
 	it "Puntaje mayor a 21" do
 		partida = Partida.new
-		partida.proximaCarta 22
+		partida.proximaCarta 10
+		partida.pedirCarta
+		partida.proximaCarta 10
+		partida.pedirCarta
+		partida.proximaCarta 10
 		partida.pedirCarta
 		expect(partida.resultado).to eq "PERDISTE"
 	end
@@ -40,6 +44,38 @@ describe "Partida de Black Jack" do
 		banca = Partida.new
 		banca.forzar_puntaje_banca 10
 		expect(banca.puntaje_banca).to eq 10
+	end
+
+	it "la banca gana" do
+		banca = Partida.new
+		banca.forzar_puntaje_banca 21
+		banca.resultado
+		expect(banca.puntaje_banca).to eq 21
+	end
+
+	it "banca mayor a 21" do
+		banca = Partida.new
+		banca.forzar_puntaje_banca 22
+		banca.resultado
+		expect(banca.puntaje_banca).to eq 0
+	end
+
+	it "el jugador gana" do
+		partida = Partida.new
+		partida.forzar_puntaje_banca 19
+		partida.proximaCarta 10
+		partida.pedirCarta
+		partida.proximaCarta 10
+		partida.pedirCarta
+		expect(partida.resultado).to eq "GANASTE"
+	end
+
+
+	it "figuras suman 10" do
+		partida = Partida.new
+		partida.proximaCarta 11
+		partida.pedirCarta
+		expect(partida.puntaje_jugador).to eq 10
 	end
 
 end
